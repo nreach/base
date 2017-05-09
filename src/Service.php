@@ -22,7 +22,7 @@ class Service
         $this->delegate = $delegate;
     }
 
-    private function remote(string $method, array $arguments = [], array $body = null) {
+    private function remote(string $method, array $arguments = [], $body = '') {
         $api = $this->mappings[$method];
         $url = $this->remoteHost . '' . $api;
         $arguments = [
@@ -37,7 +37,7 @@ class Service
         return $result->getBody();
     }
 
-    public function call($method, $arguments, $body)
+    public function call(string $method, array $arguments = [], $body = '')
     {
         return $this->remote($method, $arguments, $body);
     }

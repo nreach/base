@@ -12,7 +12,9 @@ class Service
     private $mappings = [
         'imageanalyzer' => 'imageanalyzer',
         'textanalyzer' => 'textanalyzer',
-        'chattoken' => 'bot'
+        'linker' => 'linker',
+        'chattoken' => 'bot',
+        'translate' => 'translator'
     ];
 
     function __construct(string $remoteHost, array $keys, DataSourceDelegateInterface $delegate) {

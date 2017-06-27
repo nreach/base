@@ -9,14 +9,6 @@ class Service
     private $keys = NULL;
     private $delegate = NULL;
 
-    private $mappings = [
-        'imageanalyzer' => 'imageanalyzer',
-        'textanalyzer' => 'textanalyzer',
-        'linker' => 'linker',
-        'chattoken' => 'bot',
-        'translate' => 'translator'
-    ];
-
     function __construct(string $remoteHost, array $keys, DataSourceDelegateInterface $delegate) {
         $this->client = new \GuzzleHttp\Client();
         $this->remoteHost = $remoteHost;
@@ -25,7 +17,8 @@ class Service
     }
 
     private function remote(string $method, array $arguments = [], $body = '') {
-        $api = $this->mappings[$method];
+        //FIXME: should we filter here?
+        $api = $method;
         $url = $this->remoteHost . '' . $api;
         $arguments = [
             'headers' => [

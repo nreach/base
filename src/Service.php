@@ -16,7 +16,8 @@ class Service
         $this->delegate = $delegate;
     }
 
-    private function remote(string $method, array $arguments = [], $body = '') {
+    public function call(string $method, array $arguments = [], $body = '')
+    {
         //FIXME: should we filter here?
         $api = $method;
         $url = $this->remoteHost . '' . $api;
@@ -30,10 +31,5 @@ class Service
 
         $result = $this->client->post($url, $arguments);
         return $result->getBody();
-    }
-
-    public function call(string $method, array $arguments = [], $body = '')
-    {
-        return $this->remote($method, $arguments, $body);
     }
 }

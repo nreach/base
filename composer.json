@@ -1,26 +1,26 @@
 {
-    "name": "nreach/nreach-base",
-    "description": "nreach base php library",
-    "keywords": ["php"],
-    "license": "GPL-2.0",
-    "minimum-stability": "dev",
-    "authors": [
-        {
-            "name": "Johannes Goslar",
-            "email": "johnny@nreach.io"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Nreach\\Base\\": "src/"
-        }
-    },
-    "require": {
-		    "guzzlehttp/guzzle": "^6.2.1"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
+  "name": "nreach/nreach-base",
+  "description": "nreach base php library",
+  "keywords": ["php"],
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Johannes Bernhard Goslar",
+      "email": "johannes.goslar@kronberger-spiele.de"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nreach\\Base\\": "src/"
+    }
+  },
+  "require": {
+		"guzzlehttp/guzzle": "^6.3.3"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.x-dev"
+    }
+  }
 }
